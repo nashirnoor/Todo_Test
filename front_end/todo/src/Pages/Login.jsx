@@ -26,6 +26,7 @@ const Login = () => {
             });
             // Handle successful login, e.g., redirect to dashboard
             localStorage.setItem('access_token', response.data.access_token);
+            localStorage.setItem('refresh_token', response.data.refresh_token);
             history('/');
         } catch (error) {
             setError(error.response.data.error || 'An error occurred');
